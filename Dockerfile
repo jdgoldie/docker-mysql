@@ -12,6 +12,7 @@ FROM ubuntu:12.10
 # Update the apt-sources
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -nfs /bin/true /sbin/initctl
+RUN apt-get update -y
 RUN apt-get install -y mysql-server
 
 # Fix connect address and set some configuration parameters
