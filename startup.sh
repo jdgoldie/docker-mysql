@@ -14,9 +14,12 @@
 #
 if [ ! -f /var/lib/mysql/ibdata1 ]; then
 
-  mysql_install_db
+  mysql_install_db --user mysql
 
-  /usr/bin/mysqld_safe &
+  chown mysql:mysql /run/mysqld
+  
+  mysql_upgrade --user mysql
+  /usr/bin/mysqld_safe --user mysql &
   sleep 10s
 
   # Drop anon users, set password for all root user
@@ -33,4 +36,5 @@ EOF
 
 fi
 
-/usr/bin/mysqld_safe
+chown mysql:mysql /run/mysqld
+/usr/bin/mysqld_safe --user mysql
