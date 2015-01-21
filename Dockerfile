@@ -7,7 +7,7 @@
 # By @benhschwartz
 # Used under CC Attrib 4.0 Intl (http://creativecommons.org/licenses/by/4.0)
 #
-FROM ubuntu:12.10
+FROM ubuntu:14.10
 
 # Update the apt-sources
 RUN dpkg-divert --local --rename --add /sbin/initctl

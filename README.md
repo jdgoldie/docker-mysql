@@ -14,7 +14,7 @@ Omit the `-v` option if you don't want the data persisted outside the container.
 
 ##### Current Configuration #####
 
-* Ubuntu 12.10
+* Ubuntu 14.10
 * MySQL 5.5
 
 ##### Attribution #####
